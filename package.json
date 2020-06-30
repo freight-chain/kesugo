@@ -1,0 +1,74 @@
+{
+  "name": "besu-javascript-sdk",
+  "version": "0.1.0",
+  "description": "Hyperledger Besu Javascript SDK",
+  "author": "@freight-chain",
+  "contributors": [
+    "SEE CONTRIBUTORS.md"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/freight-chain/network-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/freight-chain/network/issues"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "postinstall": "patch-package",
+    "build": "babel src -d build/src",
+    "build-single": "babel src --out-file ./build/src/index.js",
+    "compile": "rm -rf ./build/contracts/*; truffle compile --all --reset",
+    "test": "truffle test --reset --besuWallet",
+    "deploy": "truffle migrate --reset --besuWallet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freight-chain/network-sdk.git"
+  },
+  "keywords": [
+    "hyperledger",
+    "besu",
+    "blockchain",
+    "ethereum"
+  ],
+  "files": [
+    "src/",
+    "contracts/",
+    "build/src",
+    "build/contracts"
+  ],
+  "dependencies": {
+    "@ensdomains/ens": "0.3.11",
+    "@ensdomains/resolver": "0.1.9",
+    "@openzeppelin/contracts-ethereum-package": "2.2.3",
+    "@openzeppelin/gsn-helpers": "0.1.9",
+    "@openzeppelin/gsn-provider": "0.1.6",
+    "@openzeppelin/network": "0.2.9",
+    "@openzeppelin/upgrades": "2.5.3",
+    "cids": "^0.7.1",
+    "debug": "^4.1.1",
+    "entropy-string": "^4.2.0",
+    "eth-ens-namehash": "^2.0.8",
+    "ethereum-ens": "^0.7.7",
+    "ethereumjs-util": "^6.2.0",
+    "ethers": "^4.0.36",
+    "form-data": "^2.5.0",
+    "net": "^1.0.2",
+    "node-fetch": "^2.6.0",
+    "patch-package": "^6.2.0",
+    "web3": "1.2.1",
+    "web3-provider-engine": "15.0.3"
+    "hyperledger-besu-ethers": "0.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@ensdomains/buffer": "0.0.10",
+    "@ensdomains/dnssec-oracle": "^0.1.2",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "dotenv": "^8.1.0",
+    "openzeppelin-test-helpers": "0.3.2",
+    "truffle": "^5.1.11"
+  }
+}
